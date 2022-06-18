@@ -56,6 +56,9 @@ public class UserUpdateGUI extends JFrame implements ActionListener {
 		ButtonGroup logGender = new ButtonGroup();
 		logGender.add(logGenderM);
 		logGender.add(logGenderW);
+		ButtonGroup logAdmin = new ButtonGroup();
+		logAdmin.add(logAdminT);
+		logAdmin.add(logAdminF);
 		dbName = listOfDB.get(otherNum).getName();
 		dbGender = listOfDB.get(otherNum).getGender();
 		dbAge = listOfDB.get(otherNum).getAge();
@@ -136,6 +139,12 @@ public class UserUpdateGUI extends JFrame implements ActionListener {
 		}
 		if (logGenderW.isSelected()) {
 			checkGender = "W";
+		}
+		if (logAdminT.isSelected()) {
+			checkAdmin = true;
+		}
+		if (logAdminF.isSelected()) {
+			checkAdmin = false;
 		}
 		// 수정 예외 처리 조건문
 		if (e.getSource() == update) {
